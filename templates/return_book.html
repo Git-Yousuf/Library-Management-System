@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Return a Book</h1>
+<form method="post" action="{{ url_for('return_book') }}">
+    <label for="book_id">Book</label>
+    <select id="book_id" name="book_id">
+        {% for book in borrowed_books %}
+        <option value="{{ book[0] }}">{{ book[1] }} by {{ book[2] }} borrowed by {{ book[3] }} on {{ book[4] }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Return Book</button>
+</form>
+{% endblock %}

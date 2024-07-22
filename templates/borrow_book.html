@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Borrow a Book</h1>
+<form method="post" action="{{ url_for('borrow_book') }}">
+    <label for="book_id">Book</label>
+    <select id="book_id" name="book_id">
+        {% for book in books %}
+        <option value="{{ book[0] }}">{{ book[1] }} by {{ book[2] }}</option>
+        {% endfor %}
+    </select>
+    <label for="borrower_name">Borrower Name</label>
+    <input type="text" id="borrower_name" name="borrower_name" required>
+    <button type="submit">Borrow Book</button>
+</form>
+{% endblock %}
