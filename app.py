@@ -40,8 +40,10 @@ def borrow_book():
     if request.method == 'POST':
         book_id = request.form['book_id']
         borrower_name = request.form['borrower_name']
+        borrower_phone = request.form['borrower_phone']
+        borrower_address = request.form['borrower_address']
         borrow_date = datetime.date.today()
-        book_model.borrow_book(book_id, borrower_name, borrow_date)
+        book_model.borrow_book(book_id, borrower_name, borrow_date, borrower_phone, borrower_address)
         return redirect(url_for('borrowed_books'))
     books = book_model.get_all_books()
     return render_template('borrow_book.html', books=books)

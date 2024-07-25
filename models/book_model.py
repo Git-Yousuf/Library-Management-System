@@ -25,10 +25,10 @@ class BookModel:
         cur.close()
         return books
 
-    def borrow_book(self, book_id, borrower_name, borrow_date):
+    def borrow_book(self, book_id, borrower_name, borrow_date, borrower_phone , borrower_address):
         cur = self.mysql.connection.cursor()
-        cur.execute("INSERT INTO borrowers (book_id, borrower_name, borrow_date) VALUES (%s, %s, %s)",
-                    (book_id, borrower_name, borrow_date))
+        cur.execute("INSERT INTO borrowers (book_id, borrower_name, borrow_date, borrower_phone, borrower_address) VALUES (%s, %s, %s, %s, %s)",
+                    (book_id, borrower_name, borrow_date, borrower_phone, borrower_address))
         cur.execute("UPDATE books SET borrowed = TRUE WHERE id = %s", [book_id])
         self.mysql.connection.commit()
         cur.close()
