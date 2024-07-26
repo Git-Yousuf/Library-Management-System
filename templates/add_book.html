@@ -1,13 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Add a New Book</h1>
-<form method="post" action="{{ url_for('add_book') }}">
-    <label for="title">Title</label>
-    <input type="text" id="title" name="title" required>
-    <label for="author">Author</label>
-    <input type="text" id="author" name="author" required>
-    <label for="year">Year</label>
-    <input type="text" id="year" name="year" required>
+<h1 class="books_header">Add a New Book</h1>
+<form class="add_book_form" method="post" action="{{ url_for('add_book') }}">
+    <div class="add_book_form_div">
+        <div class="add_book add_book_col_1">
+            <label class="add_book_title" for="title">Title</label>
+            <input class="add_book_input" type="text" id="title" name="title" required>
+        </div>
+        <div class="add_book add_book_col_2">
+            <label class="add_book_title" for="author">Author</label>
+            <input class="add_book_input" type="text" id="author" name="author" required>
+        </div>
+        <div class="add_book add_book_col_3">
+            <label class="add_book_title" for="year">Year</label>
+            <input class="add_book_input" type="text" id="year" name="year" required>
+        </div>
+    </div>
     <button type="submit">Add Book</button>
 </form>
 {% endblock %}
