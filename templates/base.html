@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Management</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -16,6 +19,7 @@
         <a href="{{ url_for('borrow_book') }}">Borrow Book</a>
         <a href="{{ url_for('return_book') }}">Return Book</a>
         <a href="{{ url_for('borrowed_books') }}">Borrowed Books</a>
+        <a href="{{ url_for('borrowed_books_history') }}">Borrow History</a>
     </nav>
     <main>
         {% block content %}{% endblock %}

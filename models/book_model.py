@@ -43,8 +43,19 @@ class BookModel:
 
     def get_borrowed_books(self):
         cur = self.mysql.connection.cursor()
-        cur.execute("SELECT b.id, b.title, b.author, br.borrower_name, br.borrow_date FROM books b "
+        cur.execute("SELECT b.id, b.title, b.author, br.borrower_name, br.borrow_date, br.borrower_phone, br.borrower_address FROM books b "
                     "JOIN borrowers br ON b.id = br.book_id WHERE b.borrowed = TRUE AND br.return_date IS NULL")
         borrowed_books = cur.fetchall()
         cur.close()
         return borrowed_books
+    
+    def get_all_borrowed_books(self):
+        cur = self.mysql.connection.cursor()
+        cur.execute("""
+            SELECT b.id, b.title, b.author, br.borrower_name, br.borrow_date, br.return_date, br.borrower_phone, br.borrower_address 
+            FROM books b 
+            JOIN borrowers br ON b.id = br.book_id
+        """)
+        all_borrowed_books = cur.fetchall()
+        cur.close()
+        return all_borrowed_books

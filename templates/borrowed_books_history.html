@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Borrowed Books History</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Borrower Name</th>
+                <th>Borrow Date</th>
+                <th>Return Date</th>
+                <th>Borrower Phone</th>
+                <th>Borrower Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in borrowed_books %}
+                <tr>
+                    <td>{{ book[0] }}</td>
+                    <td>{{ book[1] }}</td>
+                    <td>{{ book[2] }}</td>
+                    <td>{{ book[3] }}</td>
+                    <td>{{ book[4] }}</td>
+                    <td>{{ book[5] }}</td>
+                    <td>{{ book[6] }}</td>
+                    <td>{{ book[7] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+
+    {% endblock %}

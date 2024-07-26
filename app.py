@@ -63,5 +63,11 @@ def borrowed_books():
     borrowed_books = book_model.get_borrowed_books()
     return render_template('borrowed_books.html', borrowed_books=borrowed_books)
 
+@app.route('/borrowed_books_history')
+def borrowed_books_history():
+    all_borrowed_books = book_model.get_all_borrowed_books()
+    return render_template('borrowed_books_history.html', borrowed_books=all_borrowed_books)
+
+
 if __name__ == '__main__':
     app.run(debug=True)

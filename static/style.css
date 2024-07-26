@@ -1,43 +1,118 @@
-body {
-    font-family: Arial, sans-serif;
+:root{
+    --bg_color: #FEFCFF;
+    --bg_color_hover: #cacaca;
+    --font_color: #141414;
 }
 
-header {
-    background-color: #f8f9fa;
-    padding: 1rem;
+*{
+    padding: 0;
+    margin: 0;
 }
 
-nav a {
-    margin: 0 1rem;
+body{
+    font-family: "Roboto Slab", serif;
+    background-color: var(--bg_color);
+    color: var(--font_color);
+    height: 100vh;
+}
+
+header{
+    width: 100%;
+    height: 5%;
+    padding: 25px 0px;
+    text-align: center;
+}
+
+nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 5%;
+}
+
+a{
     text-decoration: none;
-    color: #007bff;
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    background-color: #007BFF;
+    border-right: 2px solid white;
 }
 
-nav a:hover {
+a:hover{
     text-decoration: underline;
+    background-color: #0056b3;
 }
 
-main {
-    padding: 2rem;
+main{
+    width: 100%;
+    height: 80%;
 }
 
-form label {
-    display: block;
-    margin-top: 1rem;
-}
+/* Books */
 
-form input {
-    display: block;
-    margin-top: 0.5rem;
-    padding: 0.5rem;
+.books_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0px;
     width: 100%;
 }
 
-form button {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #007bff;
-    color: white;
+/* Form styles */
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.books_placeholder {
+    padding: 8px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.books_search_button {
+    padding: 8px 12px;
     border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 4px;
     cursor: pointer;
+}
+
+.books_search_button:hover {
+    background-color: #0056b3;
+}
+
+/* Table styles */
+table {
+    width: 95%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    gap: 15px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #007BFF;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
 }
