@@ -18,9 +18,14 @@ body{
 
 header{
     width: 100%;
-    height: 5%;
-    padding: 25px 0px;
-    text-align: center;
+    height: 15%;
+    display: grid;
+    place-items: center;
+}
+
+header img{
+    width: 100%;
+    height: 100%;
 }
 
 nav{
@@ -57,15 +62,16 @@ main{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 0px;
+    padding: 20px 0px;
     width: 100%;
+    max-width: 1700px;
+    margin: 0 auto;
 }
 
 /* Form styles */
 form {
     display: flex;
     gap: 10px;
-    margin-bottom: 20px;
 }
 
 .books_placeholder {
@@ -172,6 +178,13 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+.books_history{
+    padding: 20px 0;
+    width: 100%;
+    max-width: 1700px;
+    margin: 0 auto;
 }
 
 /* Responsive styles */

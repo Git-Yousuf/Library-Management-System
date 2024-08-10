@@ -11,6 +11,7 @@
 </head>
 <body>
     <header>
+        <!-- <img src="static/Images and Videos/BookBG.png" alt=""> -->
         <h1>Welcome to the Library</h1>
     </header>
     <nav>
@@ -18,7 +19,7 @@
         <a href="{{ url_for('add_book') }}">Add Book</a>
         <a href="{{ url_for('borrow_book') }}">Borrow Book</a>
         <a href="{{ url_for('return_book') }}">Return Book</a>
-        <a href="{{ url_for('borrowed_books') }}">Borrowed Books</a>
+        <a href="{{ url_for('borrowed_books') }}">Borrow Pending</a>
         <a href="{{ url_for('borrowed_books_history') }}">Borrow History</a>
     </nav>
     <main>

@@ -11,9 +11,6 @@ mysql = MySQL(app)
 book_model = BookModel(mysql)
 
 @app.route('/')
-def index():
-    return render_template('index.html')
-
 @app.route('/books')
 def books():
     books = book_model.get_all_books()
