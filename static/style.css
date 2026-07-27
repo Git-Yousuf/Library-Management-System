@@ -136,7 +136,7 @@ tr:hover {
     flex-direction: column;
     align-items: center;
     width: 80%;
-    max-width: 600px;
+    /* max-width: 600px; */
 }
 
 .add_book {

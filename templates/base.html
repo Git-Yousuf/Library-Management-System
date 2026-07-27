@@ -1,29 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library Management</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookBase.com - Library Management</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header>
-        <!-- <img src="static/Images and Videos/BookBG.png" alt=""> -->
-        <h1>Welcome to the Library</h1>
+      <!-- <img src="static/Images and Videos/BookBG.png" alt=""> -->
+      <h1>Welcome to the Library</h1>
     </header>
     <nav>
-        <a href="{{ url_for('books') }}">Books</a>
-        <a href="{{ url_for('add_book') }}">Add Book</a>
-        <a href="{{ url_for('borrow_book') }}">Borrow Book</a>
-        <a href="{{ url_for('return_book') }}">Return Book</a>
-        <a href="{{ url_for('borrowed_books') }}">Borrow Pending</a>
-        <a href="{{ url_for('borrowed_books_history') }}">Borrow History</a>
+      <a href="{{ url_for('books') }}">Books</a>
+      <a href="{{ url_for('add_book') }}">Add Book</a>
+      <a href="{{ url_for('borrow_book') }}">Borrow Book</a>
+      <a href="{{ url_for('return_book') }}">Return Book</a>
+      <a href="{{ url_for('borrowed_books') }}">Borrow Pending</a>
+      <a href="{{ url_for('borrowed_books_history') }}">Borrow History</a>
     </nav>
-    <main>
-        {% block content %}{% endblock %}
-    </main>
-</body>
+    <main>{% block content %}{% endblock %}</main>
+  </body>
 </html>

@@ -1,19 +1,50 @@
-{% extends 'base.html' %}
-{% block content %}
-<h1>Borrow a Book</h1>
-<form method="post" action="{{ url_for('borrow_book') }}">
-    <label for="book_id">Book</label>
-    <select id="book_id" name="book_id">
+{% extends 'base.html' %} {% block content %}
+<h1 class="books_history">Borrow a Book</h1>
+<form method="post" action="{{ url_for('borrow_book') }}" class="add_book_form">
+  <div class="add_book_form_div">
+    <div class="add_book add_book_col_1">
+      <label for="book_id" class="add_book_title">Book</label>
+      <select id="book_id" name="book_id" class="add_book_input">
         {% for book in books %}
         <option value="{{ book[0] }}">{{ book[1] }} by {{ book[2] }}</option>
         {% endfor %}
-    </select>
-    <label for="borrower_name">Borrower Name</label>
-    <input type="text" id="borrower_name" name="borrower_name" required>
-    <label for="borrower_phone">Borrower Phone Number</label>
-    <input type="text" id="borrower_phone" name="borrower_phone" required>
-    <label for="borrower_address">Borrower Address</label>
-    <input type="text" id="borrower_address" name="borrower_address" required>
-    <button type="submit">Borrow Book</button>
+      </select>
+    </div>
+    <div class="add_book add_book_col_2">
+      <label for="borrower_name" class="add_book_title">Borrower Name</label>
+      <input
+        type="text"
+        id="borrower_name"
+        name="borrower_name"
+        required
+        class="add_book_input"
+      />
+    </div>
+    <div class="add_book add_book_col_3">
+      <label for="borrower_phone" class="add_book_title"
+        >Borrower Phone Number</label
+      >
+      <input
+        type="text"
+        id="borrower_phone"
+        name="borrower_phone"
+        required
+        class="add_book_input"
+      />
+    </div>
+    <div class="add_book add_book_col_4">
+      <label for="borrower_address" class="add_book_title"
+        >Borrower Address</label
+      >
+      <input
+        type="text"
+        id="borrower_address"
+        name="borrower_address"
+        required
+        class="add_book_input"
+      />
+    </div>
+  </div>
+  <button type="submit">Borrow Book</button>
 </form>
 {% endblock %}
